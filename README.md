@@ -1,2 +1,2 @@
 #PINGEET
-The first social network for the penguins! 
+The first social network for penguins! 
