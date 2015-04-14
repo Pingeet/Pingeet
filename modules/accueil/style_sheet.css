@@ -1,0 +1,27 @@
+body{
+    background-color: black;
+}
+#headBand{
+    background-color: aqua;
+    position: fixed;
+    height:50px;
+    top:50px;
+    z-index:999;
+    width:100%;
+    transition-property: top;
+    transition-duration: 1s;
+}
+body > .col-md-12{
+    background-color: darkgreen;
+    height:100px;
+}
+
+body > .col-md-3{
+    background-color: blue;
+    height:1800px;
+}
+
+body > .col-md-6{
+    background-color: brown;
+    height:80px;
+}
