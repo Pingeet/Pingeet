@@ -1,6 +1,27 @@
 body{
     background-color: black;
 }
+/*
+
+*/
+li{
+    list-style: none;
+    float: left;
+}
+#headBand>ul>li>label{
+    text-align:center;
+    min-width:70px;
+    padding-top: 15px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+#headBand>ul>li>label:hover{
+    height:50px;
+    background-color:blue;    
+}
+/*
+head band fixed at 50px from top, move at 0px from top.
+*/
 #headBand{
     background-color: aqua;
     position: fixed;
@@ -9,7 +30,9 @@ body{
     z-index:999;
     width:100%;
     transition-property: top;
-    transition-duration: 1s;
+    transition-duration: 0.25s;
+    -moz-transition-property: top;
+    -moz-transition-duration: 0.25s;
 }
 body > .col-md-12{
     background-color: darkgreen;
