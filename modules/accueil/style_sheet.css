@@ -2,25 +2,15 @@ body{
     background-color: black;
 }
 /*
-
+fix all lists without bullet point and all stack in one line
 */
 li{
     list-style: none;
     float: left;
 }
-#headBand>ul>li>label{
-    text-align:center;
-    min-width:70px;
-    padding-top: 15px;
-    padding-left: 5px;
-    padding-right: 5px;
-}
-#headBand>ul>li>label:hover{
-    height:50px;
-    background-color:blue;    
-}
 /*
-head band fixed at 50px from top, move at 0px from top.
+headBand fixed at 50px from top when user scrolls the value switch to 0px from top.
+set the boutons of headBand.
 */
 #headBand{
     background-color: aqua;
@@ -34,16 +24,29 @@ head band fixed at 50px from top, move at 0px from top.
     -moz-transition-property: top;
     -moz-transition-duration: 0.25s;
 }
+#headBand>label{
+    text-align:center;
+    min-width:70px;
+    padding-top: 15px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+#headBand>label:hover{
+    height:50px;
+    background-color:blue;    
+}
+#headBand>label:nth-of-type(1){
+    margin-left:50px;
+}
+
 body > .col-md-12{
     background-color: darkgreen;
     height:100px;
 }
-
 body > .col-md-3{
     background-color: blue;
     height:1800px;
 }
-
 body > .col-md-6{
     background-color: brown;
     height:80px;
