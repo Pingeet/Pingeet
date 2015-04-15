@@ -58,5 +58,7 @@ set the boutons of headBand.
     width:50%;
 }
 .body_container > .body_center > section{
+    margin:15px;
+    word-wrap: break-word;
     background-color: chocolate;
 }
