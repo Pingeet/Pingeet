@@ -26,5 +26,8 @@ geetList.controller('geet_Ctrl', ['$scope',
             });
             $scope.newGeet = '';                // re-set newGeet
         };
+        $scope.removeGeet = function (geet) { // remove a geet
+            geetS.splice(geetS.indexOf(geet), 1);
+        };
     }
 ]);

@@ -33,7 +33,8 @@
                 <form ng-submit="addGeet()">
                     <input type="submit" value="Envoyer" />
                 </form>
-                <section ng-repeat="geet in geetS" ng-controller="dateCtrl">
+                <section ng-controller="dateCtrl" ng-show="geetS.length" ng-repeat="geet in geetS">
+                    <button type="submit" ng-click="removeGeet(geet)">X</button>
                     {{geet.user}}:<br/> {{geet.title}}//{{time.minutes+'/'+time.seconds}}
                 </section>   
             </div>
