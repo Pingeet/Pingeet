@@ -2,8 +2,6 @@
 <html lang="fr" ng-app="Acc_App">
     <head>
         <meta charset="utf8">
-        <!--get boostrap-->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
         <!--import css-->
         <link rel="stylesheet" href="ressources/accueil/style_sheet.css">
         <!--get jQuery-->
@@ -22,24 +20,25 @@
             <label>HOME</label>
             <label>PING</label>
         </div>
-        <div class="col-md-12" ng-controller="dateCtrl">
+        <div class="header" ng-controller="dateCtrl">
             {{time.day}}/{{time.month}}/{{time.year}}
         </div>
-        <div class="col-md-3">
-        </div>
-        <div class="col-md-6" ng-controller="geet_Ctrl">
-            <form>
-                <textarea name="Ping" id="geetCatcher" ng-model="newGeet"></textarea>
-            </form>
-            <form ng-submit="addGeet()">
-                <input type="submit" value="Envoyer" />
-                <input type="reset" value="Annuler" />
-            </form>
-            <div ng-repeat="geet in geetS" ng-controller="dateCtrl">
-                <p>{{geet.user}}:<br/> {{geet.title}}//{{time.minutes+'/'+time.seconds}}</p>
-            </div>   
-        </div>
-        <div class="col-md-3">
+        <div class="body_container">
+            <div class="body_side">
+            </div>
+            <div class="body_center" ng-controller="geet_Ctrl">
+                <form>
+                    <textarea name="Ping" id="geetCatcher" ng-model="newGeet"></textarea>
+                </form>
+                <form ng-submit="addGeet()">
+                    <input type="submit" value="Envoyer" />
+                </form>
+                <section ng-repeat="geet in geetS" ng-controller="dateCtrl">
+                    {{geet.user}}:<br/> {{geet.title}}//{{time.minutes+'/'+time.seconds}}
+                </section>   
+            </div>
+            <div class="body_side">
+            </div>            
         </div>            
     </body>
 </html>

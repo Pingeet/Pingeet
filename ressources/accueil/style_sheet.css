@@ -1,12 +1,6 @@
 body{
     background-color: black;
-}
-/*
-fix all lists without bullet point and all stack in one line
-*/
-li{
-    list-style: none;
-    float: left;
+    margin:0px;
 }
 /*
 headBand fixed at 50px from top when user scrolls the value switch to 0px from top.
@@ -25,29 +19,44 @@ set the boutons of headBand.
     -moz-transition-duration: 0.25s;
 }
 #headBand>label{
-    text-align:center;
+    display: inline-block;
     min-width:70px;
+    height:35px;
     padding-top: 15px;
-    padding-left: 5px;
-    padding-right: 5px;
+    margin-right:-5px;
+    text-align: center;
 }
 #headBand>label:hover{
-    height:50px;
-    background-color:blue;    
+    height:35px;
+    background-color:chartreuse;    
 }
 #headBand>label:nth-of-type(1){
     margin-left:50px;
 }
 
-body > .col-md-12{
+.header{
     background-color: darkgreen;
     height:100px;
+    width:100%;
 }
-body > .col-md-3{
+.body_container{
+    display: block;
+    width:100%;
+}
+.body_container > .body_side{
+    display: block;
+    float:left;
     background-color: blue;
     height:1800px;
+    width:25%;
 }
-body > .col-md-6{
+.body_container > .body_center{
+    display: block;
+    float:left;
     background-color: brown;
-    height:80px;
+    height:auto;
+    width:50%;
+}
+.body_container > .body_center > section{
+    background-color: chocolate;
 }
