@@ -2,6 +2,7 @@
 <html lang="fr" ng-app="Acc_App">
     <head>
         <meta charset="utf8">
+        <base href="http://0.0.0.0:8000/">
         <!--import css-->
         <link rel="stylesheet" href="ressources/accueil/style_sheet.css">
         <!--get jQuery-->
@@ -9,8 +10,8 @@
         <!--Get angularjs.min-->
         <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
         <!--import javascript-->
-        <script type="text/javascript" src="ressources/accueil/acc_app.js"></script>
         <script type="text/javascript" src="ressources/general_app.js"></script>
+        <script type="text/javascript" src="ressources/accueil/acc_app.js"></script>
         <script type="text/javascript" src="ressources/accueil/style_sheet.js"></script>
         
         <title>Pingeet</title>
@@ -21,7 +22,7 @@
             <label>PING</label>
         </div>
         <div class="header" ng-controller="dateCtrl">
-            {{time.day}}/{{time.month}}/{{time.year}}
+            {{angtime.day}}/{{angtime.month}}/{{angtime.year}}
         </div>
         <div class="body_container">
             <div class="body_side">
@@ -35,7 +36,7 @@
                 </form>
                 <section ng-controller="dateCtrl" ng-show="geetS.length" ng-repeat="geet in geetS">
                     <button type="submit" ng-click="removeGeet(geet)">X</button>
-                    {{geet.user}}:<br/> {{geet.title}}//{{time.minutes+'/'+time.seconds}}
+                    {{geet.user}}:<br/> {{geet.msg}} <br/> {{geet.date.day+'/'+geet.date.hours}}
                 </section>   
             </div>
             <div class="body_side">
