@@ -6,4 +6,3 @@ Framework used : angularjs, jQuery
 
 Programmer : Geoffrey Bisch and Paul Robin
 Organization : Strasbourg University
-

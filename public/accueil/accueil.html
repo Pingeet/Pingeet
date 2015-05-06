@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="accueil/style_sheet.css">
+<div class="body_container">
+    <div class="body_side">
+    </div>
+    <div class="body_center" ng-controller="geet_Ctrl">
+        <form>
+            <textarea name="Ping" id="geetCatcher" ng-model="newGeet"></textarea>
+        </form>
+        <form ng-submit="addGeet()">
+            <input type="submit" value="Envoyer" />
+        </form>
+        <section ng-controller="dateCtrl" ng-show="geetS.length" ng-repeat="geet in geetS">
+            <button type="submit" ng-click="removeGeet(geet)">X</button>
+            {{geet.user}}:
+            <br/> {{geet.msg}}
+            <br/> {{geet.date.day+'/'+geet.date.hours}}
+        </section>
+    </div>
+    <div class="body_side">
+    </div>
+</div>

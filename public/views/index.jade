@@ -1,0 +1,14 @@
+extends index_head
+
+block content
+
+        div(class='header' ng-controller='dateCtrl')
+             {{angtime.day}}/{{angtime.month}}/{{angtime.year}}
+        div(id='headBand')
+            a HOME
+            a PING
+            a(href='#/login') LOGOUT
+
+        div(ng-view='')
+        script(src='/socket.io/socket.io.js')
+        script(type='text/javascript' src='/service_socketio.js')

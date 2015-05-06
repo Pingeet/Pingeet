@@ -1,0 +1,14 @@
+body{
+    background-color: slateblue;
+    margin:0px;
+}
+#headBand{
+    position:fixed;
+    top:0px;
+    z-index:-1;
+}
+.header{
+    background-color: darkgreen;
+    height:100px;
+    width:100%;
+}
