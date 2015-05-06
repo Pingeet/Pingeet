@@ -54,10 +54,4 @@ app.use(function(err, req, res, next) {
   });
 });
 
-/** Angoose bootstraping */
-require("angoose").init(app, {
-   'module-dirs':'/models',
-   'mongo-opts': 'localhost:27017/test',
-});
-
 module.exports = app;
