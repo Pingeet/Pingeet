@@ -2,29 +2,32 @@
 /**
  * Module dependencies.
  */
-
 var express = require('express');
-var routes = require('./routes');
-var user = require('./routes/user');
 var http = require('http');
 var path = require('path');
+var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
+var favicon = require('serve-favicon');
+var logger = require('morgan');
+
+var routes = require('./routes/index');
+var user = require('./routes/user');
 
 var app = express();
 
 // all environments
-app.set('port', process.env.PORT || 3000);
+//app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
-app.use(express.favicon());
-app.use(express.logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded());
-app.use(express.methodOverride());
-app.use(app.router);
+app.use(favicon(__dirname + '/public/images/favicon.ico'));
+app.use(logger('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cookieParser());
+
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/', routes.index);
-app.get('/users', user.list);
+app.get('/', routes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
