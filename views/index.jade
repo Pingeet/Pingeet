@@ -2,6 +2,6 @@ extends layout
 
 block content
 
-    p Bonjour
-    div(ng-view='')
+    p(ng-controller='dateCtrl') Bonjour il est {{angtime.day}}/{{angtime.month}}/{{angtime.year}}
+        div(ng-view='')
     p Bonsoir
