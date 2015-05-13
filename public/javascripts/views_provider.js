@@ -5,15 +5,12 @@ angular.module('view_pro', ['ngRoute'])
         function ($routeProvider, $locationProvider) {
             $routeProvider
             .when('/login', {
-                templateUrl: '/html/login.html',
-                controller: 'viewCtrl'
+                templateUrl: '/html/login.html'
             })
 
             .when('/', {
-                templateUrl: '/html/home.html',
-                controller: 'viewCtrl'
+                templateUrl: '/html/home.html'
             })
-
             .otherwise({
                 redirectTo: '/login'
             });
