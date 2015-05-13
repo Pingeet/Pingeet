@@ -4,12 +4,15 @@ html(ng-app='all_Ctrl')
     meta(charset='utf-8')
     title= Pingeet
     link(rel='stylesheet', href='/stylesheets/index.css')
+    script(type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js')
     script(type='text/javascript' src='//ajax.googleapis.com/ajax/libs/angularjs/1.4.0-rc.1/angular.min.js')
     script(type='text/javascript' src='//ajax.googleapis.com/ajax/libs/angularjs/1.4.0-rc.1/angular-route.js')
     script(type='text/javascript' src='/javascripts/views_provider.js')
     script(type='text/javascript' src='/javascripts/time.js')
     script(type='text/javascript' src='/javascripts/signup.js')
     script(type='text/javascript' src='/javascripts/module.js')
+    script(type='text/javascript' src='/javascripts/acc_app.js')
+    script(type='text/javascript' src='/javascripts/stylesheet.js')
     script(type='text/javascript').
         angular.element(document.getElementsByTagName('head')).append(angular.element('<base href="' + window.location.pathname + '" />'));
   body

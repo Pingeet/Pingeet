@@ -1,0 +1,79 @@
+body {
+    background-color: grey;
+    margin: 0px;
+}
+/*
+headBand fixed at 50px from top when user scrolls the value switch to 0px from top.
+set the boutons of headBand.
+*/
+
+#headBand {
+    background-color: aqua;
+    position: fixed;
+    height: 50px;
+    top: 50px;
+    z-index: 999;
+    width: 100%;
+    transition-property: top;
+    transition-duration: 0.25s;
+}
+
+#headBand>a {
+    display: inline-block;
+    min-width: 80px;
+    height: 35px;
+    padding-top: 15px;
+    margin-right: -5px;
+    text-align: center;
+}
+
+#headBand>a:hover {
+    height: 35px;
+    background-color: chartreuse;
+}
+
+#headBand>a:nth-of-type(1) {
+    margin-left: 50px;
+}
+
+#headBand>a:nth-of-type(3) {
+    margin-right: 50px;
+    float: right;
+}
+
+.header {
+    background-color: darkgreen;
+    height: 100px;
+    width: 100%;
+}
+
+.body_container {
+    display: block;
+    width: 100%;
+}
+
+.body_container > .body_side {
+    display: block;
+    float: left;
+    background-color: blue;
+    height: 1800px;
+    width: 25%;
+}
+
+.body_container > .body_center {
+    display: block;
+    float: left;
+    background-color: brown;
+    height: auto;
+    width: 50%;
+}
+
+.body_container > .body_center > section {
+    margin: 15px;
+    word-wrap: break-word;
+    background-color: chocolate;
+}
+
+.geet {
+    display: block;
+}

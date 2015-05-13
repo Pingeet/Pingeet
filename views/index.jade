@@ -2,6 +2,11 @@ extends layout
 
 block content
 
-    p(ng-controller='dateCtrl') Bonjour il est {{angtime.day}}/{{angtime.month}}/{{angtime.year}}
+        div(class='header' ng-controller='dateCtrl')
+             {{angtime.day}}/{{angtime.month}}/{{angtime.year}}
+        div(id='headBand')
+            a HOME
+            a PING
+            a(href='#/login') LOGOUT
+
         div(ng-view='')
-    p Bonsoir
