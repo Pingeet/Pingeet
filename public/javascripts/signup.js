@@ -13,11 +13,15 @@ addUser.controller('addUser_Ctrl', ['$scope', '$http',
                 login: username,
                 password: password
             };
-            $http.post("/create", newUser)
-            .success(console.log("Utilisateur cree"))
-            .error(console.log("Utilisateur non cree"));
-
+            $http.post('/create', $scope.newUser).success(function (data) {
+                if (data == 'err') {
+                    alert("Désolé un problème est survenu lors de l 'enregistrement");
+                } else {
+                    alert("La fiche a bien été enregistrée");
+                }
+                $scope.perso = {};
+            }) 
             $scope.username = '';
             $scope.password = '';
         };
-    }]);
+                }]);
