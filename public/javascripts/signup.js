@@ -33,17 +33,20 @@ addUser.controller('addUser_Ctrl', ['$scope', '$http',
 ]);
 
 var getUser = angular.module('getUser', []);
-getUser.controller('getUser_Ctrl', ['$scope', '$http',
-    function ($scope, $http) {
+getUser.controller('getUser_Ctrl', ['$scope', '$http', '$window',
+    function ($scope, $http, $window) {
         $scope.findUser = function () {
             $scope.logpass = {
                 login: $scope.username.trim(),
-                secretPW: $scope.password
+                password: $scope.password
             }
             $http.post('/user/find', $scope.logpass)
                 .success(function (data) {
-                    if (data != 'err') {
-                        $scope.user = data;
+                    if (data != "") {
+                        $window.location.href='#/home/'+data;
+                    }
+                    else{
+                        alert("Nom ou mdp faux");
                     }
                     $scope.username = '';
                     $scope.password = '';
