@@ -40,12 +40,8 @@ app.post('/user/find', function (req, res) {
         password: req.body.password};
     User.find({login:user.login, password:user.password}, 
             function (err, user) {
-            if (err == true) {
-                res.send('err');
-            } else {
-                res.json(user);
-                console.log(user);
-            }
+                res.send(user[0]._id);
+                console.log(user[0]);
         })
 });
 app.post('/user/create', function (req, res) {
