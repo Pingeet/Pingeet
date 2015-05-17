@@ -1,12 +1,20 @@
-<div ng-controller="addUser_Ctrl">
+<form ng-controller="addUser_Ctrl" ng-submit="addNewUser()">
+    <p>Register</p>
     <label for="username">Username</label>
     <input type="text" name="username" ng-model="username"/>
     <br/>
     <label for="password">Password</label>
     <input type="password" name="password" ng-model="password"/>
     <br/>
-<form ng-submit="addNewUser()">
-    <input type="submit" value="Sign-Up" />
+    <input type="submit" value="Register" />
 </form>
-    {{newUser.login}}<br/>{{newUser.password}}
-</div>
+<form ng-controller="getUser_Ctrl" ng-submit="findUser()">
+    <p>Sign In</p>
+    <label for="username">Username</label>
+    <input type="text" name="username" ng-model="username"/>
+    <br/>
+    <label for="password">Password</label>
+    <input type="password" name="password" ng-model="password"/>
+    <br/>
+    <input type="submit" value="Sign In" />
+</form>
