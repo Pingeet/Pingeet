@@ -15,11 +15,11 @@ var app = express();
 //gestion de la DB 
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/pingeet');
-var persoSchema = mongoose.Schema({
-    login: {type: String},
-    password: {type: String}
+var userSchema = mongoose.Schema({
+    login: String,
+    password: String
 });
-var Perso = mongoose.model('Perso', persoSchema);
+var User = mongoose.model('User', userSchema);
 // all environments
 //app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
@@ -31,22 +31,38 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', routes);
 
-app.post('/create', function (req, res) {
-    //création d'un nouveau document destiné à la DB 
-    var nouveauPerso = new Perso({
+/*
+*API pour la BD
+*/
+app.post('/user/find', function (req, res) {
+    var user={
         login: req.body.login,
-        password: req.body.password
-    });
+        password: req.body.password};
+    User.find({login:user.login, password:user.password}, 
+            function (err, user) {
+            if (err == true) {
+                res.send('err');
+            } else {
+                res.json(user);
+                console.log(user);
+            }
+        })
+});
+app.post('/user/create', function (req, res) {
+    //création d'un nouveau document destiné à la DB 
+    var newUser = new User({
+        login: req.body.login,
+        password: req.body.password});
     //enregistrement dans la DB 
-    nouveauPerso.save(function (err) {
+    newUser.save(function (err) {
         if (err) {
             res.send('err');
-        }
-        else {
+        } else {
             res.send();
         }
     })
 });
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
