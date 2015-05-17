@@ -1,8 +1,14 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+body{
+    background-color: slateblue;
+    margin:0px;
 }
-
-a {
-  color: #00B7FF;
+#headBand{
+    position:fixed;
+    top:0px;
+    z-index:-1;
+}
+.header{
+    background-color: darkgreen;
+    height:100px;
+    width:100%;
 }
