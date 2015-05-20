@@ -20,6 +20,7 @@ var userSchema = mongoose.Schema({
     password: String
 });
 var User = mongoose.model('User', userSchema);
+
 // all environments
 //app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
@@ -32,23 +33,40 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', routes);
 
 /*
-*API pour la BD
-*/
+ *API pour la BD
+ */
 app.post('/user/find', function (req, res) {
-    var user={
+    var user = {
         login: req.body.login,
-        password: req.body.password};
-    User.find({login:user.login, password:user.password}, 
-            function (err, user) {
-                res.send(user[0]._id);
-                console.log(user[0]);
+        password: req.body.password
+    };
+    User.find({
+            login: user.login,
+            password: user.password
+        },
+        function (err, user) {
+            res.send(user[0]._id);
+            console.log(user[0]);
         })
 });
+app.post('/user/name', function (req, res) {
+    var userid = {
+        id: req.body.id
+    }
+    User.find({
+            _id: userid.id
+        },
+        function (err, user) {
+            res.send(user);
+            console.log(user[0]);
+        })
+})
 app.post('/user/create', function (req, res) {
     //création d'un nouveau document destiné à la DB 
     var newUser = new User({
         login: req.body.login,
-        password: req.body.password});
+        password: req.body.password
+    });
     //enregistrement dans la DB 
     newUser.save(function (err) {
         if (err) {
