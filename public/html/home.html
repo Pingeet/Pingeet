@@ -1,14 +1,13 @@
 <link rel="stylesheet" href="/stylesheets/home.css">
 <div class="body_container">
     <div class="body_side" ng-controller="homeCtrl">
-        params :
-        {{params.userId}}
+        <p ng-controller="getUserName_Ctrl" ng-init="findUser(params.userId)">Bonjour {{name}}</p>
     </div>
     <div class="body_center" ng-controller="geet_Ctrl">
         <form>
             <textarea name="Ping" id="geetCatcher" ng-model="newGeet"></textarea>
         </form>
-        <form ng-submit="addGeet()">
+        <form ng-submit="addGeet(params.userId)">
             <input type="submit" value="Envoyer" />
         </form>
         <section ng-controller="dateCtrl" ng-show="geetS.length" ng-repeat="geet in geetS">
